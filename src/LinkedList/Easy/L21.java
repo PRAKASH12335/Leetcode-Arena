@@ -4,10 +4,11 @@ package src.LinkedList.Easy;
 
 import src.LinkedList.Medium.L2;
 
-class ListNode{
+class ListNode {
     int val;
     ListNode next;
-    ListNode(int val){
+
+    ListNode(int val) {
         this.val = val;
     }
 }
@@ -15,25 +16,25 @@ class ListNode{
 public class L21 {
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        if(list1 == null)  return list2;
-        if(list2 == null)  return list1;
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
         ListNode dummy = new ListNode(0);
         ListNode start = dummy;
 
-        while(list1 != null && list2 != null){
-            if(list1.val < list2.val){
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
                 dummy.next = list1;
                 list1 = list1.next;
-            }else{
+            } else {
                 dummy.next = list2;
                 list2 = list2.next;
             }
             dummy = dummy.next;
         }
-        if(list1 != null){
+        if (list1 != null) {
             dummy.next = list1;
         }
-        if(list2 != null){
+        if (list2 != null) {
             dummy.next = list2;
         }
         return start.next;
