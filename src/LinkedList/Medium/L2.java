@@ -59,3 +59,6 @@ public class L2 {
         l.printList(finalList);
     }
 }
+
+// Time complexity - O(N)
+// Space complexity - O(1)
