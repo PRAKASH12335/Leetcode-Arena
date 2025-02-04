@@ -5,14 +5,18 @@ package PriorityQueue.Hard;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class ListNode{
+class ListNode {
     int val;
     ListNode next;
-    ListNode(){}
-    ListNode(int val){
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
         this.val = val;
     }
-    ListNode(int val, ListNode next){
+
+    ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }
@@ -22,7 +26,7 @@ public class L23 {
 
     public ListNode mergeKLists(ListNode[] lists) {
         int k = lists.length;
-        if(k == 0)
+        if (k == 0)
             return null;
         PriorityQueue<ListNode> pq = new PriorityQueue(k, new Comparator<ListNode>() {
             @Override
@@ -30,27 +34,27 @@ public class L23 {
                 return l1.val - l2.val;
             }
         });
-        for(int i=0;i<k;i++){
-            if(lists[i] != null){
+        for (int i = 0; i < k; i++) {
+            if (lists[i] != null) {
                 pq.add(lists[i]);
             }
         }
         ListNode dummy = new ListNode(0);
         ListNode start = dummy;
 
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()) {
             ListNode node = pq.poll();
             dummy.next = node;
             dummy = dummy.next;
-            if(node.next != null){
+            if (node.next != null) {
                 pq.add(node.next);
             }
         }
         return start.next;
     }
 
-    private void printList(ListNode head){
-        while(head != null){
+    private void printList(ListNode head) {
+        while (head != null) {
             System.out.print(head.val + "->");
             head = head.next;
         }
