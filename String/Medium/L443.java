@@ -29,6 +29,7 @@ public class L443 {
                 list.add(c);
             }
         }
+        System.out.println(list);
         for (int i = 0; i < list.size(); i++) {
             chars[i] = list.get(i);
         }
