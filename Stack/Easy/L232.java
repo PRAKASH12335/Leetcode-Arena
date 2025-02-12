@@ -7,17 +7,18 @@ import java.util.Stack;
 public class L232 {
     Stack<Integer> st1;
     Stack<Integer> st2;
+
     public L232() {
         st1 = new Stack<>();
         st2 = new Stack<>();
     }
 
     public void push(int x) {
-        while(!st1.isEmpty()){
+        while (!st1.isEmpty()) {
             st2.push(st1.pop());
         }
         st2.push(x);
-        while(!st2.isEmpty()){
+        while (!st2.isEmpty()) {
             st1.push(st2.pop());
         }
     }
@@ -43,3 +44,6 @@ public class L232 {
         System.out.println(obj.empty());
     }
 }
+
+// Time Complexity - O(N)
+// Space Complexity - O(N)

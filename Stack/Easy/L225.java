@@ -16,7 +16,7 @@ public class L225 {
     public void push(int x) {
         q.add(x);
         int size = q.size();
-        while(size > 1){
+        while (size > 1) {
             q.add(q.poll());
             size--;
         }
