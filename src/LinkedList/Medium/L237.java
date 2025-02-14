@@ -1,6 +1,6 @@
 package src.LinkedList.Medium;
 
-import src.LinkedList.Easy.L206;
+// 237. Delete Node in a Linked List
 
 public class L237 {
     public void deleteNode(ListNode node) {

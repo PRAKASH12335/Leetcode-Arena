@@ -1,4 +1,4 @@
-package Misc;
+package String.Medium;
 
 // 179. Largest Number
 
