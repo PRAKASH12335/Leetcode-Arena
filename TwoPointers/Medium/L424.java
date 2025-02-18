@@ -10,17 +10,17 @@ public class L424 {
         int left = 0, right = 0, maxLength = 0, maxFreq = 0;
         int n = s.length();
         int[] count = new int[26];
-        while(right < n){
+        while (right < n) {
             char c = s.charAt(right);
-            count[c-'A']++;
-            maxFreq = Math.max(maxFreq, count[c-'A']);
-            if((right-left+1) - maxFreq > k){
-                count[s.charAt(left)-'A']--;
+            count[c - 'A']++;
+            maxFreq = Math.max(maxFreq, count[c - 'A']);
+            if ((right - left + 1) - maxFreq > k) {
+                count[s.charAt(left) - 'A']--;
                 maxFreq = 0;
                 left++;
             }
-            if((right-left+1) - maxFreq <= k)
-                maxLength = Math.max(maxLength, right-left+1);
+            if ((right - left + 1) - maxFreq <= k)
+                maxLength = Math.max(maxLength, right - left + 1);
             right++;
         }
         return maxLength;
