@@ -25,4 +25,4 @@ public class L392 {
 }
 
 // Time Complexity - O(min(M, N))
-// Time Complexity - O(1)
+// Space Complexity - O(1)

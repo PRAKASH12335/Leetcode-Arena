@@ -27,4 +27,4 @@ public class L205 {
 }
 
 // Time Complexity - O(N)
-// Time Complexity - O(1)
+// Space Complexity - O(1)

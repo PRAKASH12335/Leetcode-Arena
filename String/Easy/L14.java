@@ -26,5 +26,5 @@ public class L14 {
     }
 }
 
-// TimeComplexity - O(N * logN)
-// TimeComplexity - O(1)
+// Time Complexity - O(N * logN)
+// Space Complexity - O(1)
