@@ -26,6 +26,15 @@ public class L974 {
         System.out.println(new L974().subarraysDivByK(nums, k));
     }
 }
+// 4, 5, 0, -2, -3, 1
+
+// 0, 1
+// 4, 1 count = 0
+// 4, 2 count = 0+1
+// 4, 3 count = 1+2
+// 2, 1 count = 3
+// 4, 4 count = 3+3
+// 0, 2 count = 6+1 = 7
 
 // Time Complexity - O(N)
 // Space Complexity - O(N)
