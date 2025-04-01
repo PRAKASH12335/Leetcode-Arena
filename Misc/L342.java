@@ -19,4 +19,4 @@ public class L342 {
 }
 
 // Time Complexity - O(logN)
-// Time Complexity - O(1)
+// Space Complexity - O(1)
