@@ -44,5 +44,5 @@ public class L1482 {
     }
 }
 
-// Time Complexity - O(N * log(max(bloomDay)))
+// Time Complexity - O(N * log(max-min))
 // Space Complexity - O(1)
