@@ -5,7 +5,7 @@ package BinarySearch.Hard;
 import java.util.Arrays;
 
 public class L410 {
-    private boolean checkPossible(int[] nums, int mid, int k) {
+    private int checkPossible(int[] nums, int mid) {
         int sum = 0, cnt = 1;
         for (int i = 0; i < nums.length; i++) {
             if (sum + nums[i] <= mid) {
@@ -15,7 +15,7 @@ public class L410 {
                 sum = nums[i];
             }
         }
-        return cnt > k;
+        return cnt;
     }
 
     public int splitArray(int[] nums, int k) {
@@ -25,7 +25,7 @@ public class L410 {
         int high = Arrays.stream(nums).sum();
         while (low <= high) {
             int mid = (low + high) / 2;
-            if (checkPossible(nums, mid, k)) {
+            if (checkPossible(nums, mid) > k) {
                 low = mid + 1;
             } else {
                 high = mid - 1;
