@@ -18,6 +18,19 @@ public class L410 {
         return cnt;
     }
 
+    // Linear Search
+    public int splitArrayLinear(int[] nums, int k) {
+        int low = Arrays.stream(nums).max().getAsInt();
+        int high = Arrays.stream(nums).sum();
+        for (int i = low; i < high; i++) {
+            int cnt = checkPossible(nums, i);
+            if (cnt == k)
+                return i;
+        }
+        return -1;
+    }
+
+    // Binary Search
     public int splitArray(int[] nums, int k) {
         if (nums.length < k)
             return -1;
@@ -38,6 +51,7 @@ public class L410 {
         int[] nums = {7, 2, 5, 10, 8};
         int k = 2;
         System.out.println(new L410().splitArray(nums, k));
+        // System.out.println(new L410().splitArrayLinear(nums, k));
     }
 }
 
