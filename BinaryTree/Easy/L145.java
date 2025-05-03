@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class L145 {
+    // Using two stack
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         if (root == null)
@@ -28,6 +29,33 @@ public class L145 {
         return ans;
     }
 
+    // Using one stack
+    public List<Integer> postorderTraversalStack(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        if (root == null)
+            return ans;
+        Stack<TreeNode> st1 = new Stack<>();
+        while (root != null || !st1.isEmpty()) {
+            if (root != null) {
+                st1.push(root);
+                root = root.left;
+            } else {
+                TreeNode temp = st1.peek().right;
+                if (temp == null) {
+                    temp = st1.pop();
+                    ans.add(temp.val);
+                    while (!st1.isEmpty() && temp == st1.peek().right) {
+                        temp = st1.pop();
+                        ans.add(temp.val);
+                    }
+                } else {
+                    root = temp;
+                }
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         TreeNode leafNode1 = new TreeNode(5);
         TreeNode leafNode2 = new TreeNode(6);
@@ -37,6 +65,7 @@ public class L145 {
         TreeNode node2 = new TreeNode(2, leafNode3, node1);
         TreeNode root = new TreeNode(1, node2, leafNode4);
         System.out.println(new L145().postorderTraversal(root));
+        System.out.println(new L145().postorderTraversalStack(root));
     }
 }
 
