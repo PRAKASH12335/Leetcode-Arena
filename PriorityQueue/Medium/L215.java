@@ -8,16 +8,18 @@ public class L215 {
 
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-        for(int n : nums){
+        for (int n : nums) {
             pq.add(n);
-            if(pq.size() > k)
-                pq.poll();
+            if (pq.size() > k) {
+                // pq.poll();
+                System.out.println(pq.poll());
+            }
         }
         return pq.peek();
     }
 
     public static void main(String[] args) {
-        int[] nums = {3,2,1,5,6,4};
+        int[] nums = {3, 2, 5, 6, 4, 1};
         int k = 2;
         System.out.println(new L215().findKthLargest(nums, k));
     }
