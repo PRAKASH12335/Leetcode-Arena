@@ -74,3 +74,6 @@ public class BoundaryTraversalOfTree {
         System.out.println(new BoundaryTraversalOfTree().boundaryTraversal(root));
     }
 }
+
+// Time Complexity - O(N)
+// Space Complexity - O(H)
