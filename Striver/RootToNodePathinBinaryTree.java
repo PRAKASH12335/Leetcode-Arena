@@ -6,26 +6,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RootToNodePathinBinaryTree {
-    List<Integer> res = new ArrayList<>();
-
-    private void helper(TreeNode root, List<Integer> list, int target) {
+    private void helper(TreeNode root, List<Integer> list, List<List<Integer>> res,  int target) {
         if (root == null)
             return;
         if (root.val == target) {
             list.add(root.val);
-            res = new ArrayList<>(list);
+            res.add(new ArrayList<>(list));
         }
         list.add(root.val);
-        helper(root.left, list, target);
-        helper(root.right, list, target);
+        helper(root.left, list, res, target);
+        helper(root.right, list, res, target);
         list.remove(list.size() - 1);
     }
 
-    private List<Integer> rootToNodePath(TreeNode root, int target) {
+    private List<List<Integer>> rootToNodePath(TreeNode root, int target) {
         if (root == null)
             return new ArrayList<>();
-        List<Integer> list = new ArrayList<>();
-        helper(root, list, target);
+        List<List<Integer>> res = new ArrayList<>();
+        helper(root, new ArrayList<>(), res, target);
         return res;
     }
 
