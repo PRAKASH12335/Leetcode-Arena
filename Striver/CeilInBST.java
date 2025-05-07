@@ -3,6 +3,22 @@ package Striver;
 // Ceil in a Binary Search Tree
 
 public class CeilInBST {
+    private int findFloor(TreeNode root, int target) {
+        int floor = -1;
+        while (root != null) {
+            if (root.val == target) {
+                floor = root.val;
+                return floor;
+            }
+            if (root.val < target) {
+                floor = root.val;
+                root = root.right;
+            } else
+                root = root.left;
+        }
+        return floor;
+    }
+
     private int findCeil(TreeNode root, int target) {
         int ceil = -1;
         while (root != null) {
@@ -30,8 +46,11 @@ public class CeilInBST {
         root.left.right.right = new TreeNode(9);
         root.right.left = new TreeNode(11);
         root.right.right = new TreeNode(14);
-        int ceil = new CeilInBST().findCeil(root, 8);
+        CeilInBST obj = new CeilInBST();
+        int ceil = obj.findCeil(root, 8);
         System.out.println(ceil);
+        int floor = obj.findFloor(root, 8);
+        System.out.println(floor);
     }
 }
 
