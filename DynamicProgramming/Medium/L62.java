@@ -7,6 +7,8 @@ public class L62 {
     public int uniquePathsRec(int m, int n) {
         if (m == 1 || n == 1)
             return 1;
+        if (m < 1 || n < 1)
+            return 0;
         int left = uniquePathsRec(m, n - 1);
         int up = uniquePathsRec(m - 1, n);
         return left + up;
