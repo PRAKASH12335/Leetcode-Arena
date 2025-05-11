@@ -1,4 +1,4 @@
-package Striver;
+package Striver.DP;
 
 // Subset Sum Equals to Target
 

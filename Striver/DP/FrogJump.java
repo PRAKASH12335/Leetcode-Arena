@@ -1,4 +1,4 @@
-package Striver;
+package Striver.DP;
 
 // DP 3. Frog Jump
 

@@ -1,4 +1,4 @@
-package Striver;
+package Striver.DP;
 
 // Frog Jump with K Distance
 
