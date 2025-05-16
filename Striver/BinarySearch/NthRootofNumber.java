@@ -1,4 +1,4 @@
-package Striver;
+package Striver.BinarySearch;
 
 // Nth Root of a Number using Binary Search
 

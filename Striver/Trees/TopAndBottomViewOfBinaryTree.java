@@ -1,4 +1,4 @@
-package Striver;
+package Striver.Trees;
 
 // Top View & Bottom View of the Binary Tree
 

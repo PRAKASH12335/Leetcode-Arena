@@ -1,4 +1,4 @@
-package Striver;
+package Striver.BinarySearch;
 
 // Row with maximum number of 1s
 

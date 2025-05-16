@@ -1,4 +1,4 @@
-package Striver;
+package Striver.BinarySearch;
 
 // Minimise Maximum Distance between Gas Stations
 

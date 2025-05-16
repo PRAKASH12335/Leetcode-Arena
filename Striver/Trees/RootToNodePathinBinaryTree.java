@@ -1,4 +1,4 @@
-package Striver;
+package Striver.Trees;
 
 // Root to Node Path in Binary Tree
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RootToNodePathinBinaryTree {
-    private void helper(TreeNode root, List<Integer> list, List<List<Integer>> res,  int target) {
+    private void helper(TreeNode root, List<Integer> list, List<List<Integer>> res, int target) {
         if (root == null)
             return;
         if (root.val == target) {

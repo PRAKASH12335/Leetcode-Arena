@@ -1,4 +1,4 @@
-package Striver;
+package Striver.Trees;
 
 // Largest BST in Binary Tree
 

@@ -1,4 +1,4 @@
-package Striver;
+package Striver.Trees;
 
 // Ceil in a Binary Search Tree
 

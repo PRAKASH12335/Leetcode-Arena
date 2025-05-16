@@ -1,4 +1,4 @@
-package Striver;
+package Striver.Trees;
 
 // Inorder Successor/Predecessor in BST
 

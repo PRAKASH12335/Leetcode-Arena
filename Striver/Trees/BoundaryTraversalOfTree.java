@@ -1,4 +1,4 @@
-package Striver;
+package Striver.Trees;
 
 // Boundary Traversal of binary tree
 
