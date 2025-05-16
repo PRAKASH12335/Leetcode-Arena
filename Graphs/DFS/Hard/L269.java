@@ -1,4 +1,4 @@
-package Graphs.DFS.Medium;
+package Graphs.DFS.Hard;
 
 // 269. Alien Dictionary
 

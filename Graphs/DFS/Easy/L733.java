@@ -1,4 +1,4 @@
-package Graphs.DFS.Medium;
+package Graphs.DFS.Easy;
 
 // 733. Flood Fill
 
