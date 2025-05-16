@@ -2,8 +2,6 @@ package BinaryTree.Easy;
 
 // 112. Path Sum
 
-import Striver.TopAndBottomViewOfBinaryTree;
-
 public class L112 {
     private boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null)
