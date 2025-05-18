@@ -21,6 +21,12 @@ public class FloydWarshallAlgo {
                 }
             }
         }
+        // For negative Cycle
+        for (int i = 0; i < n; i++) {
+            if (matrix[i][i] < 0)
+                System.out.println("Negative cycle exist");
+        }
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (matrix[i][j] == (int) (1e9))
