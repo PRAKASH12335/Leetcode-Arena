@@ -18,7 +18,7 @@ public class DisjointSet {
         }
     }
 
-    private int findParent(int u) {
+    public int findParent(int u) {
         if (u == parent.get(u))
             return u;
         int ulp_u = findParent(parent.get(u));
@@ -26,7 +26,7 @@ public class DisjointSet {
         return parent.get(u);
     }
 
-    private void unionByRank(int u, int v) {
+    public void unionByRank(int u, int v) {
         int ulp_u = findParent(u);
         int ulp_v = findParent(v);
         if (ulp_u == ulp_v) return;
@@ -41,7 +41,7 @@ public class DisjointSet {
         }
     }
 
-    private void unionBySize(int u, int v) {
+    public void unionBySize(int u, int v) {
         int ulp_u = findParent(u);
         int ulp_v = findParent(v);
         if (ulp_u == ulp_v) return;
