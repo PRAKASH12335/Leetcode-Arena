@@ -46,9 +46,8 @@ public class L745 {
             if (color[it] == -1) {
                 if (dfs(it, 1 - col, color, graph) == false)
                     return false;
-                else if (color[it] == col)
-                    return false;
-            }
+            } else if (color[it] == col)
+                return false;
         }
         return true;
     }
