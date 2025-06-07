@@ -93,8 +93,9 @@ public class L1547 {
     public static void main(String[] args) {
         int[] cuts = {1, 3, 4, 5};
         int n = 7;
-        System.out.println(new L1547().minCostRecursion(n, cuts));
-        System.out.println(new L1547().minCostMemo(n, cuts));
-        System.out.println(new L1547().minCostDP(n, cuts));
+        L1547 obj = new L1547();
+        System.out.println(obj.minCostRecursion(n, cuts));
+        System.out.println(obj.minCostMemo(n, cuts));
+        System.out.println(obj.minCostDP(n, cuts));
     }
 }
