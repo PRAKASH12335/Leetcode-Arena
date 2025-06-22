@@ -30,8 +30,8 @@ public class L381 {
 
         int lastElement = list.get(list.size() - 1);
         list.set(removeIdx, lastElement);
-
         map.get(lastElement).add(removeIdx);
+
         map.get(lastElement).remove(list.size() - 1);
         list.remove(list.size() - 1);
         return true;
@@ -44,18 +44,18 @@ public class L381 {
 
     public static void main(String[] args) {
         L381 randomizedCollection = new L381();
-        randomizedCollection.insert(1);   // return true since the collection does not contain 1.
+        System.out.println(randomizedCollection.insert(1));   // return true since the collection does not contain 1.
         // Inserts 1 into the collection.
-        randomizedCollection.insert(1);   // return false since the collection contains 1.
+        System.out.println(randomizedCollection.insert(1));   // return false since the collection contains 1.
         // Inserts another 1 into the collection. Collection now contains [1,1].
-        randomizedCollection.insert(2);   // return true since the collection does not contain 2.
+        System.out.println(randomizedCollection.insert(2));   // return true since the collection does not contain 2.
         // Inserts 2 into the collection. Collection now contains [1,1,2].
-        randomizedCollection.getRandom(); // getRandom should:
+        System.out.println(randomizedCollection.getRandom()); // getRandom should:
         // - return 1 with probability 2/3, or
         // - return 2 with probability 1/3.
-        randomizedCollection.remove(1);   // return true since the collection contains 1.
+        System.out.println(randomizedCollection.remove(1));   // return true since the collection contains 1.
         // Removes 1 from the collection. Collection now contains [1,2].
-        randomizedCollection.getRandom(); // getRandom should return 1 or 2, both equally likely.
+        System.out.println(randomizedCollection.getRandom()); // getRandom should return 1 or 2, both equally likely.
     }
 }
 
