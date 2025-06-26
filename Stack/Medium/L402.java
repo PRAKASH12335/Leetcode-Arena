@@ -30,7 +30,7 @@ public class L402 {
         while (ans.length() > 0 && ans.charAt(0) == '0') {
             ans.deleteCharAt(0);
         }
-        return ans.toString();
+        return ans.toString().equals("") ? "0" : ans.toString();
     }
 
     public static void main(String[] args) {
