@@ -7,32 +7,32 @@ import java.util.PriorityQueue;
 
 public class L767 {
     public String reorganizeString(String s) {
-        HashMap<Character, Integer> countMap = new HashMap<>();
+        int n = s.length();
+        int[] count = new int[26];
         for (char c : s.toCharArray()) {
-            countMap.put(c, countMap.getOrDefault(c, 0) + 1);
+            count[c - 'a']++;
+            if (count[c - 'a'] > (n + 1) / 2)
+                return "";
         }
-        PriorityQueue<Character> maxPQ = new PriorityQueue<>((a, b) -> countMap.get(b) - countMap.get(a));
-        for (char c : countMap.keySet()) {
-            maxPQ.add(c);
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> b[1] - a[1]);
+        for (int i = 0; i < 26; i++) {
+            if (count[i] != 0)
+                pq.add(new int[]{i, count[i]});
         }
         StringBuilder sb = new StringBuilder();
-        while (maxPQ.size() > 1) {
-            char a = maxPQ.poll();
-            char b = maxPQ.poll();
-            sb.append(a).append(b);
-            countMap.put(a, countMap.get(a) - 1);
-            countMap.put(b, countMap.get(b) - 1);
-            if (countMap.get(a) > 0)
-                maxPQ.add(a);
-            if (countMap.get(b) > 0)
-                maxPQ.add(b);
+        while (pq.size() >= 2) {
+            int[] a = pq.poll();
+            int[] b = pq.poll();
+            char first = (char) (a[0] + 'a');
+            char second = (char) (b[0] + 'a');
+            sb.append(first).append(second);
+            if (a[1] - 1 > 0)
+                pq.add(new int[]{a[0], a[1] - 1});
+            if (b[1] - 1 > 0)
+                pq.add(new int[]{b[0], b[1] - 1});
         }
-        if (maxPQ.size() == 1) {
-            char temp = maxPQ.poll();
-            if (countMap.get(temp) > 1)
-                return "";
-            else
-                sb.append(temp);
+        while (!pq.isEmpty()) {
+            sb.append((char) (pq.poll()[0] + 'a'));
         }
         return sb.toString();
     }
@@ -43,5 +43,5 @@ public class L767 {
     }
 }
 
-// Time Complexity - O(N * logN)
+// Time Complexity - O(N)
 // Space Complexity - O(N)
