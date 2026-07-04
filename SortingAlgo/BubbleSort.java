@@ -13,8 +13,8 @@ public class BubbleSort {
 
     private void bubbleSort(int[] nums) {
         int n = nums.length;
-        boolean flag = false;
         for (int i = 0; i < n - 1; i++) {
+            boolean flag = false;
             for (int j = 0; j < n - i - 1; j++) {
                 if (nums[j] > nums[j + 1]) {
                     swap(j, j + 1, nums);
