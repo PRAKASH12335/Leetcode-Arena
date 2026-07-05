@@ -2,7 +2,9 @@ package SortingAlgo;
 
 // Merge Sort
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MergeSort {
     private void merge(int[] left, int[] right, int[] nums) {
@@ -50,9 +52,46 @@ public class MergeSort {
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 4, 1, 5, 3};
+        int[] nums1 = {2, 7, 4, 1, 5, 3};
         MergeSort ms = new MergeSort();
         ms.mergeSort(nums);
+        ms.mergeSorting(nums1, 0, nums1.length - 1);
         Arrays.stream(nums).forEach(a -> System.out.println(a));
+        Arrays.stream(nums1).forEach(a -> System.out.println(a));
+    }
+
+    // Striver's Merge Sort
+    private void mergeSorting(int[] nums, int low, int high) {
+        if (low >= high) return;
+        int mid = (low + high) / 2;
+        mergeSorting(nums, low, mid);
+        mergeSorting(nums, mid + 1, high);
+        mergeLogic(nums, low, mid, high);
+    }
+
+    private void mergeLogic(int[] nums, int low, int mid, int high) {
+        int left = low, right = mid + 1;
+        List<Integer> temp = new ArrayList<>();
+        while (left <= mid && right <= high) {
+            if (nums[left] <= nums[right]) {
+                temp.add(nums[left]);
+                left++;
+            } else {
+                temp.add(nums[right]);
+                right++;
+            }
+        }
+        while (left <= mid) {
+            temp.add(nums[left]);
+            left++;
+        }
+        while (right <= high) {
+            temp.add(nums[right]);
+            right++;
+        }
+        for (int i = low; i <= high; i++) {
+            nums[i] = temp.get(i - low);
+        }
     }
 }
 
