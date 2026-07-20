@@ -3,6 +3,26 @@ package Arrays.Medium;
 // 73. Set Matrix Zeroes
 
 public class L73 {
+    public void setZeroesBetter(int[][] matrix) {
+        int m = matrix.length, n = matrix[0].length;
+        int[] row = new int[m];
+        int[] col = new int[n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    row[i] = 1;
+                    col[j] = 1;
+                }
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (row[i] == 1 || col[j] == 1)
+                    matrix[i][j] = 0;
+            }
+        }
+    }
+
     public void setZeroes(int[][] matrix) {
         int m = matrix.length, n = matrix[0].length;
         boolean firstRow = false, firstCol = false;
@@ -57,6 +77,25 @@ public class L73 {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        int[][] matrix1 = {
+                {1, 1, 1},
+                {1, 0, 1},
+                {1, 1, 1}
+        };
+        for (int i = 0; i < matrix1.length; i++) {
+            for (int j = 0; j < matrix1[0].length; j++) {
+                System.out.print(matrix1[i][j] + " ");
+            }
+            System.out.println();
+        }
+        new L73().setZeroesBetter(matrix1);
+        System.out.println("After Operation :");
+        for (int i = 0; i < matrix1.length; i++) {
+            for (int j = 0; j < matrix1[0].length; j++) {
+                System.out.print(matrix1[i][j] + " ");
             }
             System.out.println();
         }
