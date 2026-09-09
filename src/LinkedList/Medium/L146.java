@@ -26,7 +26,6 @@ public class L146 {
 
     private void add(Node node) {
         node.next = head.next;
-        ;
         head.next = node;
         node.prev = head;
         node.next.prev = node;
