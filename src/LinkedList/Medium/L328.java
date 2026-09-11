@@ -9,14 +9,14 @@ public class L328 {
             return null;
         ListNode odd = head;
         ListNode even = head.next;
-        ListNode temp = even;
+        ListNode evenHead = even;
         while (even != null && even.next != null) {
-            odd.next = even.next;
+            odd.next = odd.next.next;
+            even.next = even.next.next;
             odd = odd.next;
-            even.next = odd.next;
             even = even.next;
         }
-        odd.next = temp;
+        odd.next = evenHead;
         return head;
     }
 
