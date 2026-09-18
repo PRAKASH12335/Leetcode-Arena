@@ -37,3 +37,6 @@ public class L735 {
         Arrays.stream(ans).forEach(a -> System.out.print(a + " "));
     }
 }
+
+// Time Complexity - O(N)
+// Space Complexity - O(N)
